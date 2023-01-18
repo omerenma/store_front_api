@@ -55,7 +55,7 @@ const editUser = async (req: Request, res: Response) => {
         const result = await user.edit(data)
         res.status(200).json(result)
     } catch (error) {
-        res.status(400).json(error)
+        res.status(400).send(error)
     }
 }
 
@@ -66,6 +66,7 @@ const deleteUser = async(req: Request, res: Response) => {
         const result = await user.deleteUser(parseInt(id))
         res.status(200).json(result)
     } catch (error) {
+        console.log(error, 'user error')
         res.status(400).json(error)
     }
 }

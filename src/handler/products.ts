@@ -58,10 +58,11 @@ const deleteProducts = async(req: Request, res: Response) => {
         const id = req.params.id
         console.log(id)
         const product = new ProductsModel();
-        const result = await product.deleProduct(Number(id))
+        const result = await product.deleProduct(parseInt(id))
         res.status(200).json(result)
     } catch (error) {
-        res.status(400).json(error)
+        res.json(error)
+        //res.status(400).json(error)
     }
 }
 

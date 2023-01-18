@@ -5,19 +5,21 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 ## API Endpoints
 #### Products
-- Index 
-- Show
-- Create [token required]
+- Index => GET : "localhost:550/products"
+- Show => GET : "localhost:550/products/:id/"
+- Create [token required] => POST "localhost:550/products"
 - [OPTIONAL] Top 5 most popular products 
 - [OPTIONAL] Products by category (args: product category)
 
 #### Users
-- Index [token required]
-- Show [token required]
-- Create N[token required]
+- Index [token required] => GET : "localhost:550/users"
+- Show [token required] => GET : "localhost:550/user/:id"
+- Create N[token required] => POST : "localhost:550/user"
 
 #### Orders
-- Current Order by user (args: user id)[token required]
+- Current Order by user (args: user id)[token required] => GET : "/orders"
+- Specific order => Get : "localhost:550/orders/:id"
+- Make order => POST : "localhost:550/orders"
 - [OPTIONAL] Completed Orders by user (args: user id)[token required]
 
 ## Data Shapes
@@ -26,7 +28,6 @@ These are the notes from a meeting with the frontend developer that describe wha
 - name
 - price
 - [OPTIONAL] category
-
 #### User
 - id
 - firstName

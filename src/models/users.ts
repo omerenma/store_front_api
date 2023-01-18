@@ -61,7 +61,7 @@ export class UserModel {
     }
 
     // edit user
-    async edit(user: EditUser): Promise<Users> {
+    async edit(user: EditUser): Promise<Users[]> {
         console.log(user, 'user')
         try {
             const connection = await Client.connect();
@@ -69,7 +69,7 @@ export class UserModel {
             const result = await connection.query(sql, [user.firstname, user.lastname]);
             const response = result
             connection.release()
-            return response.rows[0]
+            return response.rows
         } catch (error) {
             throw new Error(`Error: ${error}`)
         }

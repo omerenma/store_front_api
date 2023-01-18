@@ -9,6 +9,7 @@ dotenv_1.default.config();
 const { POSTGRES_HOST, POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD } = process.env;
 const client = new pg_1.Pool({
     host: POSTGRES_HOST,
+    port: 5432,
     database: POSTGRES_DB,
     user: POSTGRES_USER,
     password: POSTGRES_PASSWORD,

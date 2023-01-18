@@ -4,9 +4,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
+const users_1 = __importDefault(require("./handler/users"));
+const products_1 = __importDefault(require("./handler/products"));
+const orders_1 = __importDefault(require("./handler/orders"));
 const app = (0, express_1.default)();
+app.use((0, cors_1.default)());
+app.use(express_1.default.json());
+(0, users_1.default)(app);
+(0, products_1.default)(app);
+(0, orders_1.default)(app);
 app.listen(process.env.SERVER_PORT, () => {
     console.log(`Express server listening on port ${process.env.SERVER_PORT}`);
 });

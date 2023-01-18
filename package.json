@@ -4,9 +4,11 @@
   "description": "A node API built with Typescript, express, postgresql and jasmine testing framework that powers and supply data to the frontend store",
   "main": "server.ts",
   "scripts": {
+     "build": "npx tsc",
      "start": "nodemon src/server.ts",
     "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./build --onSuccess \"node ./build/server.js\"",
-    "test": "jasmine-ts",
+    "test:init": "jasmine",
+    "test": "yarn run build && yarn run jasmine",
     "tsc": "tsc"
   },
   "author": "Onyebuchi Kingsley",
