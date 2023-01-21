@@ -19,3 +19,4 @@ app.use(express_1.default.json());
 app.listen(process.env.SERVER_PORT, () => {
     console.log(`Express server listening on port ${process.env.SERVER_PORT}`);
 });
+module.exports = app;

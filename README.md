@@ -1,40 +1,71 @@
-## Description of application
+### Description of application
 - Storefront backend api built with NodeJs, express framework, postgresql and jasmine testing framework
 - The application provides data needed to power the frontend of an ecommerce website
 
-## Instruction on usage
-- clone the respository from https://github.com/omerenma/storefrontapi into your local machine
-- cd storefrontapi
-- Run yarn add all || npm install in your terminal
-
-## Server port
+### PORT NUMBER FOR SERVER
 - 5500
-## Database port
+## PORT NUMBER FOR DATABASE
 -  5432
-## Database name
-- store_front_api
+### ENVIRONMENT VARIABLES
+- SERVER_PORT = 5500
+- POSTGRES_HOST = 127.0.0.1
+- POSTGRES_DB = store_front_api
+- POSTGRES_TEST_DB = postgres
+- POSTGRES_USER = postgres
+- POSTGRES_PASSWORD = omerenma1
+- ENV = dev
+- BCRYPT_PASSWORD = ncdjndjnsadjnNCJCNJNCJINC8282ijsoijoSIIijijiuqwjo
+- SALT_ROUNDS = 10
+- TOKEN_SECRET = 'skdmsamdisadmcansdc0nndcjndcajsden'
+- PEEPER = mmmkfmldk9448jvkmfdso
+
+### PACKAGAE INSTALLATION
+- clone the respository from https://github.com/omerenma/store_front_api into your local machine
+- cd store_front_api
+- Run yarn add all or npm install
+
+### DATABASE SETUP
+- CREATE DATABASE store_front_api
+
 ## Database Migration
 - Run db-migrate up in your terminal
 ## Database connection instruction
 - 
 ## Starting application express server
-- Run yarn start in your terminal 
+- Run yarn start or npm in your terminal 
 - Server listens on port 5500
 
-## Linting, formating and code style check
-- Run yarn lint
 
-## Prettier
-- Run yarn prettier
+### Database Schema
+#### Product
+-  id
+- name
+- price
+#### User
+- id
+- firstName
+- lastName
+- password
 
-## Compiles and minifies for production
-- Run yarn build
+#### Orders
+- id
+- id of each product in the order
+- quantity of each product in the order
+- user_id
+- status of order (active or complete)
 
-## Testing the endpoint
-- Run yarn test
 
-## Endpoint to resize image
-- localhost:5000/api/images?filename='encenadaport.jpg'&width=200&height=200
+## API Endpoints
+#### Products
+- Index => GET : "localhost:5500/products"
+- Show => GET : "localhost:550/products/:id/"
+- Create [token required] => POST "localhost:5500/products"
+#### Users
+- Index [token required] => GET : "localhost:5500/users"
+- Show [token required] => GET : "localhost:5500/user/:id"
+- Create N[token required] => POST : "localhost:550/user"
+#### Orders
+- Current Order by user (args: user id)[token required] => GET : "/orders"
+- Specific order => Get : "localhost:5500/orders/:id"
+- Make order => POST : "localhost:5500/orders"
 
-## Image resize  functionality
-- Upon accessing the endpoint url with the query parametersc, a new copy of the image is save to disk with  the location /assetes/thumbnails

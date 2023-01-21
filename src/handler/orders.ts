@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express'
-import jwt from 'jsonwebtoken'
+import { verifyToken } from '../utils/authToken'
 import { OrdersModel} from '../models/orders'
 
 const getOrders =  async (_req: Request, res: Response) => {
@@ -59,9 +59,9 @@ const addProduct = async (req: Request, res: Response) => {
 
 const ordersRoutes = (app: express.Application) => {
     app.get('/orders',getOrders);
-    app.get('/orders/:id', getOderById)
-    app.post('/orders', addOrder)
-    app.post('/orders/:id/products', addProduct)
+    app.get('/orders/:id',verifyToken, getOderById)
+    app.post('/orders', verifyToken, addOrder)
+    app.post('/orders/:id/products', verifyToken, addProduct)
 }
 
 export default ordersRoutes

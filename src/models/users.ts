@@ -62,7 +62,6 @@ export class UserModel {
 
     // edit user
     async edit(user: EditUser): Promise<Users[]> {
-        console.log(user, 'user')
         try {
             const connection = await Client.connect();
             const sql = `UPDATE users SET (firstname, lastname) = ($1, $2) WHERE id=${user.id}`;

@@ -4,11 +4,11 @@
   "description": "A node API built with Typescript, express, postgresql and jasmine testing framework that powers and supply data to the frontend store",
   "main": "server.ts",
   "scripts": {
-     "build": "npx tsc",
-     "start": "nodemon src/server.ts",
+    "build": "npx tsc",
+    "start": "nodemon src/server.ts",
     "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./build --onSuccess \"node ./build/server.js\"",
     "test:init": "jasmine",
-    "test": "yarn run build && yarn run jasmine",
+    "test": "SET ENV=test db-migrate --env test up db-migrate db:drop test && yarn run build && yarn run jasmine",
     "tsc": "tsc"
   },
   "author": "Onyebuchi Kingsley",
@@ -16,12 +16,13 @@
   "dependencies": {
     "@types/dotenv": "^8.2.0",
     "@types/jasmine": "^4.3.1",
-    "@types/node": "^18.11.10",
+    "@types/request": "^2.48.8",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "all": "^0.0.0",
     "express": "^4.18.2",
     "nodemon": "^2.0.20",
+    "request": "^2.88.2",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.3"
   },
@@ -30,6 +31,7 @@
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.15",
     "@types/jsonwebtoken": "^9.0.0",
+    "@types/node": "^18.11.18",
     "@types/pg": "^8.6.6",
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",

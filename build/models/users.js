@@ -68,7 +68,6 @@ class UserModel {
     // edit user
     edit(user) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(user, 'user');
             try {
                 const connection = yield database_1.default.connect();
                 const sql = `UPDATE users SET (firstname, lastname) = ($1, $2) WHERE id=${user.id}`;

@@ -8,8 +8,6 @@ These are the notes from a meeting with the frontend developer that describe wha
 - Index => GET : "localhost:550/products"
 - Show => GET : "localhost:550/products/:id/"
 - Create [token required] => POST "localhost:550/products"
-- [OPTIONAL] Top 5 most popular products 
-- [OPTIONAL] Products by category (args: product category)
 
 #### Users
 - Index [token required] => GET : "localhost:550/users"
@@ -20,7 +18,6 @@ These are the notes from a meeting with the frontend developer that describe wha
 - Current Order by user (args: user id)[token required] => GET : "/orders"
 - Specific order => Get : "localhost:550/orders/:id"
 - Make order => POST : "localhost:550/orders"
-- [OPTIONAL] Completed Orders by user (args: user id)[token required]
 
 ## Data Shapes
 #### Product
@@ -40,4 +37,39 @@ These are the notes from a meeting with the frontend developer that describe wha
 - quantity of each product in the order
 - user_id
 - status of order (active or complete)
+
+
+
+### PORT NUMBER FOR SERVER
+- 5500
+## PORT NUMBER FOR DATABASE
+-  5432
+### ENVIRONMENT VARIABLES
+- SERVER_PORT = 5500
+- POSTGRES_HOST = 127.0.0.1
+- POSTGRES_DB = store_front_api
+- POSTGRES_TEST_DB = postgres
+- POSTGRES_USER = postgres
+- POSTGRES_PASSWORD = omerenma1
+- ENV = dev
+- BCRYPT_PASSWORD = ncdjndjnsadjnNCJCNJNCJINC8282ijsoijoSIIijijiuqwjo
+- SALT_ROUNDS = 10
+- TOKEN_SECRET = 'skdmsamdisadmcansdc0nndcjndcajsden'
+- PEEPER = mmmkfmldk9448jvkmfdso
+
+### PACKAGAE INSTALLATION
+- clone the respository from https://github.com/omerenma/store_front_api into your local machine
+- cd store_front_api
+- Run yarn add all or npm install
+
+### DATABASE SETUP
+- CREATE DATABASE store_front_api
+
+## Database Migration
+- Run db-migrate up in your terminal
+## Database connection instruction
+- 
+## Starting application express server
+- Run yarn start or npm in your terminal 
+- Server listens on port 5500
 

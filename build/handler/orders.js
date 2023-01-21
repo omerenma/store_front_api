@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const authToken_1 = require("../utils/authToken");
 const orders_1 = require("../models/orders");
 const getOrders = (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -64,8 +65,8 @@ const addProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
 });
 const ordersRoutes = (app) => {
     app.get('/orders', getOrders);
-    app.get('/orders/:id', getOderById);
-    app.post('/orders', addOrder);
-    app.post('/orders/:id/products', addProduct);
+    app.get('/orders/:id', authToken_1.verifyToken, getOderById);
+    app.post('/orders', authToken_1.verifyToken, addOrder);
+    app.post('/orders/:id/products', authToken_1.verifyToken, addProduct);
 };
 exports.default = ordersRoutes;
