@@ -14,8 +14,12 @@ usersRoutes(app)
 productsRoutes(app)
 ordersRoutes(app)
 
+app.get('/app', (req, res) => {
+    res.json({message: "Okay"})
+})
+
 app.listen(process.env.SERVER_PORT, () => {
     console.log(`Express server listening on port ${process.env.SERVER_PORT}`)
 })
 
-module.exports = app
+export default app

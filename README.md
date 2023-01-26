@@ -37,22 +37,30 @@
 
 
 ### Database Schema
-#### Product
--  id
-- name
-- price
-#### User
-- id
-- firstName
-- lastName
-- password
 
-#### Orders
-- id
-- id of each product in the order
-- quantity of each product in the order
-- user_id
-- status of order (active or complete)
+## Product
+-  id integer
+- name string
+- price integer
+- [OPTIONAL] category
+## User
+- id integer
+- firstName string
+- lastName string
+- password string
+
+## Orders
+- id integer
+- id of each product in the order : integer
+- quantity of each product in the order : integer
+- user_id : integer
+- status of order (active or complete) : string
+
+## Order_products
+- id integer
+- quantity integer
+- order_id integer
+- product_id integer
 
 
 ## API Endpoints
@@ -69,3 +77,6 @@
 - Specific order => Get : "localhost:5500/orders/:id"
 - Make order => POST : "localhost:5500/orders"
 
+
+     <!-- "test:watch": "jest --watch",
+    "test": "jest", -->

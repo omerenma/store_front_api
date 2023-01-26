@@ -10,7 +10,7 @@
   "test": {
     "driver": "pg",
     "host": "localhost",
-    "database": "store_front_api",
+    "database": "store_front_api_test",
     "user": "postgres",
     "password": "omerenma1"
   }

@@ -16,7 +16,10 @@ app.use(express_1.default.json());
 (0, users_1.default)(app);
 (0, products_1.default)(app);
 (0, orders_1.default)(app);
+app.get('/app', (req, res) => {
+    res.json({ message: "Okay" });
+});
 app.listen(process.env.SERVER_PORT, () => {
     console.log(`Express server listening on port ${process.env.SERVER_PORT}`);
 });
-module.exports = app;
+exports.default = app;

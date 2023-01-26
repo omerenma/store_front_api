@@ -36,7 +36,6 @@ export class OrdersModel {
     }
     // add 
     async create(order: Order): Promise<Order[]> {
-        console.log(order, 'order')
 
         const connection = await Client.connect();
         try {

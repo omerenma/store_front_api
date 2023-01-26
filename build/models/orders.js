@@ -48,7 +48,6 @@ class OrdersModel {
     // add 
     create(order) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(order, 'order');
             const connection = yield database_1.default.connect();
             try {
                 const query = 'INSERT INTO orders ( product_id, quantity, user_id, status) VALUES ($1, $2, $3, $4) RETURNING *';

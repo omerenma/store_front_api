@@ -19,24 +19,31 @@ These are the notes from a meeting with the frontend developer that describe wha
 - Specific order => Get : "localhost:550/orders/:id"
 - Make order => POST : "localhost:550/orders"
 
-## Data Shapes
-#### Product
--  id
-- name
-- price
+### Data Shapes
+## Product
+-  id integer
+- name string
+- price integer
 - [OPTIONAL] category
-#### User
-- id
-- firstName
-- lastName
-- password
+## User
+- id integer
+- firstName string
+- lastName string
+- password string
 
-#### Orders
-- id
-- id of each product in the order
-- quantity of each product in the order
-- user_id
-- status of order (active or complete)
+## Orders
+- id integer
+- id of each product in the order : integer
+- quantity of each product in the order : integer
+- user_id : integer
+- status of order (active or complete) : string
+
+## Order_products
+- id integer
+- quantity integer
+- order_id integer
+- product_id integer
+
 
 
 
@@ -72,4 +79,7 @@ These are the notes from a meeting with the frontend developer that describe wha
 ## Starting application express server
 - Run yarn start or npm in your terminal 
 - Server listens on port 5500
+
+### Database Schema With Tables and Columns
+
 

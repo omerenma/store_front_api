@@ -1,10 +1,9 @@
-import usersRoutes from '../handler/users';
 import { OrdersModel } from '../models/orders'
 
-const store = new OrdersModel()
 const id: string = '7'
 const orderId: string = '5'
-describe('Oreders Models', () => {
+const store = new OrdersModel()
+describe('Orders Models', () => {
     it('should have an index method in order model', async () => {
         const result = await store.index()
         expect(result).toBeDefined()
