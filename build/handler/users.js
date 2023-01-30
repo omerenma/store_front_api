@@ -83,10 +83,10 @@ const deleteUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
 });
 const usersRoutes = (app) => {
-    app.get('/users', getUsers);
+    app.get('/users', authToken_1.verifyToken, getUsers);
     app.get('/user/:id', authToken_1.verifyToken, getUserById);
     app.post('/user', addUser);
-    app.put('/user/:id', authToken_1.verifyToken, editUser);
-    app.delete('/user/:id', authToken_1.verifyToken, deleteUser);
+    app.put('/user/:id', editUser);
+    app.delete('/user/:id', deleteUser);
 };
 exports.default = usersRoutes;

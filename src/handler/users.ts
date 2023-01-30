@@ -73,11 +73,11 @@ const deleteUser = async(req: Request, res: Response) => {
 
 
 const usersRoutes = (app: express.Application) => {
-    app.get('/users',getUsers);
+    app.get('/users',verifyToken,getUsers);
     app.get('/user/:id', verifyToken ,getUserById)
     app.post('/user', addUser)
-    app.put('/user/:id',verifyToken, editUser)
-     app.delete('/user/:id', verifyToken,deleteUser)
+    app.put('/user/:id', editUser)
+     app.delete('/user/:id',deleteUser)
 }
 
 export default usersRoutes

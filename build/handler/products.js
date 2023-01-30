@@ -76,9 +76,9 @@ const deleteProducts = (req, res) => __awaiter(void 0, void 0, void 0, function*
 });
 const productsRoutes = (app) => {
     app.get('/products', getProducts);
-    app.get('/products/:id', authToken_1.verifyToken, getProductById);
+    app.get('/products/:id', getProductById);
     app.post('/product', authToken_1.verifyToken, addProduct);
-    app.put('/product/:id', authToken_1.verifyToken, editProducts);
-    app.delete('/product/:id', authToken_1.verifyToken, deleteProducts);
+    app.put('/product/:id', editProducts);
+    app.delete('/product/:id', deleteProducts);
 };
 exports.default = productsRoutes;

@@ -68,10 +68,10 @@ const deleteProducts = async(req: Request, res: Response) => {
 
 const productsRoutes = (app: express.Application) => {
     app.get('/products',getProducts);
-    app.get('/products/:id',verifyToken, getProductById)
+    app.get('/products/:id', getProductById)
     app.post('/product',verifyToken,addProduct)
-    app.put('/product/:id',verifyToken, editProducts)
-    app.delete('/product/:id',verifyToken, deleteProducts)
+    app.put('/product/:id', editProducts)
+    app.delete('/product/:id', deleteProducts)
 }
 
 export default productsRoutes

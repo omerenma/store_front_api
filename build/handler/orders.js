@@ -64,7 +64,7 @@ const addProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
 });
 const ordersRoutes = (app) => {
-    app.get('/orders', getOrders);
+    app.get('/orders', authToken_1.verifyToken, getOrders);
     app.get('/orders/:id', authToken_1.verifyToken, getOderById);
     app.post('/orders', authToken_1.verifyToken, addOrder);
     app.post('/orders/:id/products', authToken_1.verifyToken, addProduct);

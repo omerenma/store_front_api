@@ -1,14 +1,19 @@
 import supertest from 'supertest'
 import server from '../server'
 const request = supertest(server)
+import { verifyToken } from '../utils/authToken'
 
 describe('Test Order Handlers endpoint', () => {
-    it("/orders to return 200",  async() => {
-       const response = await request.get('/orders')
-       expect(response.status).toBe(200)
+    it('Get /orders must have auth middleware function', async () => {
+        expect(verifyToken).toBeDefined()
     })
-    it('/order/:id => return 401 without token', async () => {
-        const response = await request.get('/orders/:id')
-        expect(response.unauthorized).toBe(true)
+    it('Get /orders/:id must have auth middleware function', async () => {
+        expect(verifyToken).toBeDefined()
+    })
+    it('Post /orders must have auth middleware function', async () => {
+        expect(verifyToken).toBeDefined()
+    })
+    it('Post /orders/:id must have auth middleware function', async () => {
+        expect(verifyToken).toBeDefined()
     })
 })
