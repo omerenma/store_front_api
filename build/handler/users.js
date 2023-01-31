@@ -48,7 +48,7 @@ const addUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const user = new users_1.UserModel();
         const result = yield user.create(data);
-        let token = jsonwebtoken_1.default.sign({ payload: result }, process.env.TOKEN_SECRET, { expiresIn: 3600 });
+        let token = jsonwebtoken_1.default.sign({ payload: result }, process.env.TOKEN_SECRET, { expiresIn: '9999 years' });
         res.status(200).send(token);
     }
     catch (error) {

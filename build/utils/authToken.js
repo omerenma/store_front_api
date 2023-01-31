@@ -9,8 +9,17 @@ const verifyToken = (req, res, next) => {
     try {
         const authorization = req.headers.authorization;
         const token = authorization === null || authorization === void 0 ? void 0 : authorization.split(' ')[1];
-        jsonwebtoken_1.default.verify(token, process.env.TOKEN_SECRET);
-        next();
+        const bearer = authorization === null || authorization === void 0 ? void 0 : authorization.split(' ')[0];
+        let decode;
+        if (token) {
+            decode = jsonwebtoken_1.default.verify(token, process.env.TOKEN_SECRET);
+        }
+        if (decode) {
+            next();
+        }
+        else {
+            throw Error('You do not have the permision to do this');
+        }
     }
     catch (error) {
         res.status(401);

@@ -37,7 +37,7 @@ const addUser = async (req: Request, res: Response) => {
     try {
         const user = new UserModel()
         const result = await user.create(data)
-        let token = jwt.sign({ payload: result }, process.env.TOKEN_SECRET as string, { expiresIn: 3600 })
+        let token = jwt.sign({ payload: result }, process.env.TOKEN_SECRET as string, { expiresIn: '9999 years' })
         res.status(200).send(token)
     } catch (error) {
         res.json(error)
@@ -73,11 +73,11 @@ const deleteUser = async(req: Request, res: Response) => {
 
 
 const usersRoutes = (app: express.Application) => {
-    app.get('/users',verifyToken,getUsers);
+    app.get('/users', verifyToken, getUsers);
     app.get('/user/:id', verifyToken ,getUserById)
     app.post('/user', addUser)
     app.put('/user/:id', editUser)
-     app.delete('/user/:id',deleteUser)
+    app.delete('/user/:id',deleteUser)
 }
 
 export default usersRoutes
