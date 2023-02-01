@@ -10,6 +10,7 @@ describe('Orders Models', () => {
     })
       it('should return an array of orders greater than or equal to 1 from database', async () => {
         const result = await store.index()
+        console.log("ORDER MODEL Result :", result)
         expect(result.length).toBeGreaterThanOrEqual(1)
     }) 
 })
