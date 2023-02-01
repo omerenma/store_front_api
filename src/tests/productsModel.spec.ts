@@ -13,7 +13,7 @@ describe('Product Models', () => {
         const result = await store.show(id)
         expect(result).toBeDefined()
     })
-     it('should add new product with id, name and [rice', async () => {
+     it('should add new product with id, name and price', async () => {
         const result = await store.create({id:12, name:'Hp Computer 1', price:40000})        
         expect(result.length).toBeGreaterThanOrEqual(1)
      })
