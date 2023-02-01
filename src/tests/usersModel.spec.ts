@@ -16,7 +16,7 @@ describe('User Models', () => {
        expect(result).toBeDefined()
     })
     it('should have a show method with id parameter', async () => {
-        const result = await store.show(1)
+        const result = await store.show(id)
         expect(result).toBeDefined()
     })
      it('should have an edit method with id, firstname, lastname parameters', async () => {
