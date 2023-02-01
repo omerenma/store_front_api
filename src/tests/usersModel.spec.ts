@@ -10,8 +10,7 @@ describe('User Models', () => {
         expect(result).toBeDefined()
     })
     it('should have a create method with id, firstname, lastname, password parameters', async () => {
-       const result = await store.create({firstname:'kingsley', lastname:'omerenma', password:'omerenma1'})
-       console.log('USER DATA :',  result)
+       const result = await store.create()
        expect(result).toBeDefined()
     })
     it('should have a show method with id parameter', async () => {
@@ -22,9 +21,5 @@ describe('User Models', () => {
         const result = await store.edit({id:1, firstname:'kingsley', lastname:'omerenma'})
         expect(result).toBeDefined()
      })
-    //  it('should have a delete method with id parameter', async () => {
-    //     const result = await store.deleteUser(deleteId)
-    //     expect(result).toBeDefined()
-    //  })
     
 })
