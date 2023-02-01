@@ -8,7 +8,7 @@ const mockedToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIj
 const mockedId = 97
 describe('Test users handler endpoint', () => {
     it('Post /user should add a user', async() => {
-        const response = await request.post('/user').send({firstname:'Kingsley', lastname:"Onyebuchi", password:"password"})
+        const response = await request.post('/user').send({id:1, firstname:'Kingsley', lastname:"Onyebuchi", password:"password"})
         expect(response.status).toBe(200)
     })
     it('/Users returns all the users if authorized by the authorization middleware', async() => {
