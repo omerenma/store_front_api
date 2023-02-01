@@ -8,7 +8,7 @@
     "start": "nodemon src/server.ts",
     "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./build --onSuccess \"node ./build/server.js\"",
     "test:init": "jasmine",
-    "test": "SET ENV=test db-migrate --env test up",
+    "test": "SET ENV=test db-migrate --env test up && yarn run build && yarn run jasmine",
     "tsc": "tsc"
   },
   "author": "Onyebuchi Kingsley",
