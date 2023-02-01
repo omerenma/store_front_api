@@ -3,7 +3,7 @@
   "dev": {
     "driver": "pg",
     "host": "localhost",
-    "database": "store_front_api",
+    "database": "store_front_ap",
     "user": "postgres",
     "password": "omerenma1"
   },
