@@ -16,7 +16,8 @@ export type Id = {
 export type EditUser = {
     firstname: string;
     lastname: string;
-    id:number
+    id:number,
+    token?:string
 }
 
 export class UserModel {
