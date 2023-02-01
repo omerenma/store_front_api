@@ -15,7 +15,7 @@ describe('Product Models', () => {
     })
      it('should have a create method with id, name, price parameters', async () => {
         const result = await store.create({id:5, name:'Test Product 1', price:300})
-        console.log("PRODUCT RESULT :", response);
+        console.log("PRODUCT RESULT :", result);
         
         expect(result).toBeDefined()
      })
