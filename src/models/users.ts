@@ -9,6 +9,7 @@ export  type Users = {
     firstname: string;
     lastname: string;
     password: string;
+    token?:string
 }
 export type Id = {
     id:string
@@ -16,8 +17,7 @@ export type Id = {
 export type EditUser = {
     firstname: string;
     lastname: string;
-    id:number,
-    token?:string
+    id:number;
 }
 
 export class UserModel {
