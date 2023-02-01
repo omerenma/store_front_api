@@ -13,10 +13,8 @@ describe('Product Models', () => {
         const result = await store.show(id)
         expect(result).toBeDefined()
     })
-     it('should have a create method with id, name, price parameters', async () => {
-        const result = await store.create({id:12, name:'Hp Computer 1', price:40000})
-        console.log("PRODUCT RESULT :", result);
-        
+     it('should add new product with id, name and [rice', async () => {
+        const result = await store.create({id:12, name:'Hp Computer 1', price:40000})        
         expect(result.length).toBeGreaterThanOrEqual(1)
      })
     
