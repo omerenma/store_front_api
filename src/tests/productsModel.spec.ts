@@ -2,7 +2,7 @@ import usersRoutes from '../handler/users';
 import { ProductsModel } from '../models/products'
 
 const store = new ProductsModel()
-const id: string = '7'
+const id: string = '1'
 const productId: Number = 6
 describe('Product Models', () => {
     it('should have an index method in product model', async () => {
