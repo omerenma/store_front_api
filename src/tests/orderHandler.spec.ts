@@ -9,7 +9,7 @@ const mockedId = 2
 
 
 describe('Order test', () => {
-    it('should add order if authorized', async () => {
+    it('Post /orders should add order if authorized', async () => {
         const response = await request.post('/orders')
         .set('Authorization', `Bearer ${mockedToken}`)
         .send({product_id:1, quantity:200, user_id:1, status:'Active'})
@@ -17,6 +17,7 @@ describe('Order test', () => {
     })
     it('/Orders return all orders if authorized by authorization middleware', async () => {
           const response = await request.get('/orders').set('Authorization', `Bearer ${mockedToken}`)
+          console.log("RESPONSE :", response.body)
         expect(response.status).toBe(200)
     })
     it('/Orders/:id returns a specific order if authorized by the authorization middleware', async() => {
