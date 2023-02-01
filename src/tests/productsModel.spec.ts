@@ -14,10 +14,10 @@ describe('Product Models', () => {
         expect(result).toBeDefined()
     })
      it('should have a create method with id, name, price parameters', async () => {
-        const result = await store.create({id:5, name:'Test Product 1', price:300})
+        const result = await store.create({id:12, name:'Hp Computer 1', price:40000})
         console.log("PRODUCT RESULT :", result);
         
-        expect(result).toBeDefined()
+        expect(result.length).toBeGreaterThanOrEqual(1)
      })
     
 })
