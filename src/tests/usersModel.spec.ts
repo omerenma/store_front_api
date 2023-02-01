@@ -10,7 +10,7 @@ describe('User Models', () => {
         expect(result).toBeDefined()
     })
     it('should have a create method with id, firstname, lastname, password parameters', async () => {
-       const result = await store.create({id:1, firstname:'kingsley', lastname:'omerenma', password:'omerenma1'})
+       const result = await store.create({firstname:'kingsley', lastname:'omerenma', password:'omerenma1'})
        console.log('USER DATA :',  result)
        expect(result).toBeDefined()
     })
