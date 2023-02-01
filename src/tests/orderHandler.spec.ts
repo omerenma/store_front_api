@@ -12,7 +12,7 @@ describe('Order test', () => {
     it('Post /orders should add order if authorized', async () => {
         const response = await request.post('/orders')
         .set('Authorization', `Bearer ${mockedToken}`)
-        .send({product_id:1, quantity:200, user_id:1, status:'Active'})
+        .send({product_id:2, quantity:200, user_id:1, status:'Active'})
         expect(response.status).toBe(200)
     })
     it('/Orders return all orders if authorized by authorization middleware', async () => {
