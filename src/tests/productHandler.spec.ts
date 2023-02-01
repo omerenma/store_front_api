@@ -6,7 +6,7 @@ const mockedToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIj
 const mockedId = 2
 describe('Test products handler endpoint', () => {
     it(' POST /product must have auth middleware to add products', async () => {
-       const response = await request.post('/product').set('Authorization', `Bearer ${mockedToken}`).send({name:'Testing Products 1', price:1000000}, {name:'Testing Products 3', price:30000})
+       const response = await request.post('/product').set('Authorization', `Bearer ${mockedToken}`).send({name:'Testing Products 1', price:1000000})
        console.log('PRODUCT RESPONSE :', response)
        expect((await response).status).toBe(200)
     })
