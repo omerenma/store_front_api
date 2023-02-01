@@ -12,7 +12,7 @@ describe('User Models', () => {
         expect(result).toBeDefined()
     })
     it('should have a create method with firstname, lastname, password parameters', async () => {
-       const result = await store.create({firstname:'kingsley', lastname:'omerenma', password:'omerenma1', token:mockedToken})
+       const result = await store.create({firstname:'kingsley', lastname:'omerenma', password:'omerenma1'})
        expect(result).toBeDefined()
     })
     it('should have a show method with id parameter', async () => {
