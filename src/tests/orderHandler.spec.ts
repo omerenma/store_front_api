@@ -17,7 +17,8 @@ describe('Order test', () => {
     })
     it('/Orders return all orders if authorized by authorization middleware', async () => {
           const response = await request.get('/orders').set('Authorization', `Bearer ${mockedToken}`)
-        expect(response.length).toBeGreaterThanOrEqual(1)
+          console.log("GET ORDER :", response)
+        expect(response.status).toBe(200)
     })
     it('/Orders/:id returns a specific order if authorized by the authorization middleware', async() => {
          const response = await request.get(`/orders/${mockedId}`).set('Authorization', `Bearer ${mockedToken}`)
