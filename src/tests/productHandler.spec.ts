@@ -10,7 +10,7 @@ describe('Test products handler endpoint', () => {
         expect(response.status).toBe(200)
     })
     it(' POST /product must have auth middleware to add products', async () => {
-       const response = request.post('/product').set('Authorization', `Bearer ${mockedToken}`).send({name:'Testing Products 2', price:1000000})
+       const response = await request.post('/product').set('Authorization', `Bearer ${mockedToken}`).send({name:'Testing Products 2', price:1000000})
        console.log('PRODUCT RESPONSE :', response.data)
        expect((await response).status).toBe(200)
     })
